@@ -33,7 +33,7 @@ with st.sidebar:
     max_length = st.sidebar.slider('max_length', min_value=64, max_value=4096, value=512, step=8)
     
     st.markdown('📖 Learn how to build this app in this [blog](#link-to-blog)!')
-os.environ['REPLICATE_API_TOKEN'] = replicate_api
+os.environ['REPLICATE_API_TOKEN'] = str(replicate_api)
 
 # Store LLM generated responses
 if "messages" not in st.session_state.keys():
