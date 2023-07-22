@@ -62,10 +62,10 @@ def generate_llama2_response(prompt_input):
     return output
 
 # User-provided prompt
-if prompt := st.chat_input(disabled=not replicate_api):
+if prompt := st.chat_input(disabled=not replicate_api):"I would like to create a lotion. Will you teach me how?"
 st.session_state.messages.append({"role": "user", "content": prompt})
-with st.chat_message("user"):
-        st.write(prompt)
+with st.chat_message("user"):"I want to make a natural deodorant. How should I make it?"
+st.write(prompt)
 
 # Generate a new response if last message is not from assistant
 if st.session_state.messages[-1]["role"] != "assistant":
