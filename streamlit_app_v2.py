@@ -40,6 +40,9 @@ if isinstance(replicate_api, str):
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [{"role": "assistant", "content": "How may I assist you today?"}]
 
+if isinstance(replicate_api, str):
+    os.environ['REPLICATE_API_TOKEN'] = replicate_api
+
 # Display or clear chat messages
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
