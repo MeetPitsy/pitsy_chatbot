@@ -70,14 +70,7 @@ if prompt := st.chat_input(disabled=not replicate_api):I want to make an amazing
         st.write(prompt)
 
 # Generate a new response if last message is not from assistant
-if st.session_state.messages[-1]["role"] != "assistant":Great! Creating an all-organic lotion can be a wonderful and safe way to moisturize and nurture your skin. To help you get started, here are some tips and ingredients you can consider using:
-1. Choose a base oil: The base oil is the foundation of your lotion, and it provides the moisturizing properties. Some popular organic base oils include coconut oil, olive oil, jojoba oil, and shea butter. Each oil has its own unique properties, so you can choose the one that best suits your skin type and needs.
-2. Add emollients: Emollients help to soften and smoothen your skin. Some common emollients used in organic lotions include beeswax, candelilla wax, and vegetable glycerin. These ingredients can help to create a barrier on the skin's surface, locking in moisture and protecting your skin from dryness.
-3. Use humectants: Humectants are ingredients that attract and retain moisture. Some common humectants used in organic lotions include honey, aloe vera, and glycerin. These ingredients can help to keep your skin hydrated and soft, leaving it feeling smooth and supple.
-4. Add essential oils: Essential oils can provide a pleasant scent to your lotion and also have additional benefits for your skin. Some popular essential oils for skin care include lavender, tea tree, and chamomile. These oils can help to soothe, calm, and protect your skin.
-5. Consider preservatives: Preservatives are important to include in your lotion to prevent the growth of bacteria and mold. There are many natural preservatives that you can use, such as vitamin E oil, grapefruit seed extract, and rosemary essential oil.
-Remember, when creating an all-organic lotion, it's important to use only safe and gentle ingredients that are suitable for your skin type. Always patch test any new ingredients on a small area of skin before using them on your face or body.
-I hope these tips and ingredients help you in creating an amazing, all-organic lotion! If you have any more questions or need further assistance, feel free to ask.
+if st.session_state.messages[-1]["role"] != "assistant":
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             response = generate_llama2_response(prompt)
